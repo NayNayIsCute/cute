@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Important Meme</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #111;
+      color: white;
+    }
+    .card {
+      max-width: 520px;
+      margin: auto;
+      background: #222;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Opening file...</h1>
+    <p id="status">Tap below to continue</p>
+    <button onclick="runPrank()">Open</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function runPrank() {
+      const status = document.getElementById("status");
+      const result = document.getElementById("result");
+
+      status.textContent = "Scanning boyfriend levels...";
+      result.innerHTML = "";
+
+      setTimeout(() => {
+        status.textContent = "Analysis complete.";
+        result.innerHTML = `
+          <p><strong>Cuteness:</strong> 99%</p>
+          <p><strong>Drama:</strong> manageable</p>
+          <p><strong>Needs kiss immediately:</strong> confirmed</p>
+          <img src="meme.jpg" alt="meme">
+        `;
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
